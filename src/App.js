@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter } from "react-router-dom";
+import { Provider } from "react-redux";
+
+import { GlobalStyle } from "./styles/globalStyles";
+import { Normalize } from "styled-normalize";
+
+import AppRoutes from "./routes";
+import store from "./store";
+import ColorsNotas from "./styles/ColorsNotas"
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Provider store={store}>
+        {/* <ColorsNotas> */}
+          <GlobalStyle />
+          <Normalize />
+          <AppRoutes />
+        {/* </ColorsNotas> */}
+      </Provider>
+    </BrowserRouter>
   );
 }
 
