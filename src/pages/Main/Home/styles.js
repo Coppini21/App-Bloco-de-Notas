@@ -11,16 +11,18 @@ export const Container = styled.section`
         display: flex;
         flex-direction: column;
         align-items: center;
+        width: 100%;
 
         h1{
             color: rgb(190, 99, 45 ) ;   
         }
 
         textarea{
+            max-width: 90%;
+            width: 700px;
             margin-top: 20px;
             font-size: 20px;
             padding: 20px;
-            width: 700px;
             height: 400px;
             border-radius: 10px;
         }

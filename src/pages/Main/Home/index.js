@@ -17,7 +17,7 @@ export default function Home(){
         <Container>
             <div>
                 <h1>Escreva sua nota: </h1>
-                <textarea id="nota" onChange={(e) => setText(e.target.value)}></textarea>
+                <textarea id="nota" onChange={(e) => setText(e.target.value)} placeholder="Digite algo..."></textarea>
                 <button type="button" onClick={() => dispatch(salvarNaLista({text, unique_id}))}>Salvar</button>
             </div>
             

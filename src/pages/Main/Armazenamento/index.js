@@ -7,6 +7,7 @@ import { salvarEdicao } from "../../../store";
 
 import { Container } from "./styles"
 import MyContext from "../../../context/MyContext";
+import Visualizar from "../../../components/Notes/Visualizar";
 
 export default function Armazenamento() {
     const {idAtual} = useContext(MyContext)
@@ -21,6 +22,7 @@ export default function Armazenamento() {
                 <button type="button" id="btnSalvarEdicao" onClick={() => dispatch(salvarEdicao({ textEdition, idAtual }))} >Salvar Edição</button>
             </div>
             <Notes />
+            <Visualizar/>
         </Container>
     )
 }

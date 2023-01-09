@@ -14,6 +14,7 @@ export const Container = styled.section`
         align-items: center;
 
         textarea{
+            max-width: 90%;
             width: 700px;
             height: 200px;
             border-radius: 10px;

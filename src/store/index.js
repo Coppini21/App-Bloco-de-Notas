@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 
 
 const { createSlice, configureStore } = require("@reduxjs/toolkit");
@@ -37,42 +38,53 @@ const createNotes = createSlice({
             const posicaoAtual = state.notes.findIndex((nota) => nota.id === action.payload.id);
 
             if (atualizarNota){
+                console.log("aaaaaaaaa")
                 state.notes[posicaoAtual].nota = action.payload.nota
             } 
 
             if (posicaoAtual !== -1) {
-                const pos = action.payload.id
+                // const pos = action.payload.id
                 console.log(posicaoAtual)
                 atualizarNota = state.notes[posicaoAtual].nota = action.payload.nota
                 areaEdition.innerText = atualizarNota
 
-                salvarEdicao(pos)
             }
         },
 
         salvarEdicao(state, action){
-            let key = action.payload.idAtual;
+            let key = action.payload;
 
-            const posicaoAtual = state.notes.findIndex((nota) => nota.id === key);
+            const posicaoAtual = state.notes.findIndex((nota) => nota.id === action.payload.idAtual);
 
             console.log(key);
-            console.log("fooooooi");
-            console.log(document.getElementById("areaEdicao").value);
-            console.log(state.notes);
+         
 
             if(posicaoAtual !== -1){
                 state.notes[posicaoAtual].nota = action.payload.textEdition;
                 document.getElementById("areaEdicao").value = '';
                 document.getElementById("areaEdicao").disabled = true;   
+            }            
+        },
+
+        visualizar(state, action){
+            let key = action.payload.id;
+
+            const posicaoAtual = state.notes.findIndex((nota) => nota.id === action.payload.id);
+
+            console.log(key);
+            console.log(posicaoAtual);
+
+            if(posicaoAtual !== -1){
+                let descricao = state.notes[posicaoAtual].nota
+                document.getElementById("VisualizacaoDescricao").innerText = descricao
+                document.getElementById("visualStyled").style.display = "flex"
             }
-           
-                      
         }
     }
   
 })
 
-export const { salvarNaLista, excluirNota, editarNota, salvarEdicao } = createNotes.actions;
+export const { salvarNaLista, excluirNota, editarNota, salvarEdicao, visualizar } = createNotes.actions;
 
 export default configureStore({
     reducer: createNotes.reducer

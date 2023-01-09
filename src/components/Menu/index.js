@@ -11,7 +11,6 @@ export default function Menu(){
 
     return(
         <Container id={id}>
-            {console.log(id)}
             <div className="divMenuLadoEsquerdo">
                 <h1>Notas</h1>
                 <h3>{notes.length} Notas</h3>
