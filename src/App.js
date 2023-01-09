@@ -6,17 +6,19 @@ import { Normalize } from "styled-normalize";
 
 import AppRoutes from "./routes";
 import store from "./store";
-import ColorsNotas from "./styles/ColorsNotas"
+import MyContext from "./context/MyContext";
+import { useState } from "react";
 
 function App() {
+  const [idAtual, setIdAtual] = useState(null)
   return (
     <BrowserRouter>
       <Provider store={store}>
-        {/* <ColorsNotas> */}
+        <MyContext.Provider value={{idAtual, setIdAtual}}>
           <GlobalStyle />
           <Normalize />
           <AppRoutes />
-        {/* </ColorsNotas> */}
+        </MyContext.Provider>      
       </Provider>
     </BrowserRouter>
   );

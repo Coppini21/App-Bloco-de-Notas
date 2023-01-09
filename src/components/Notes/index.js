@@ -1,27 +1,22 @@
-import { useState } from "react";
+import { useContext, useEffect } from "react";
 
 import { DivNotasSalvas } from "./styles";
 
 import { useSelector, useDispatch } from 'react-redux';
 import { excluirNota, editarNota} from "../../store";
 
-export default function Notes({ setIdAtual }) {
+import MyContext from "../../context/MyContext";
+
+export default function Notes() {
+    const {idAtual, setIdAtual} = useContext(MyContext)
     const notes = useSelector(store => store.notes);
     const dispatch = useDispatch();
 
     console.log(notes)
 
-    // useEffect(() => {
-    //     async function pegandoId(){
-    //         let idTeste = await document.getElementsByClassName("nota")
-
-    //         return idTeste.getAttribute("id")
-    //     }
-
-    //     setIdAtual(pegandoId)
-    // }, [setIdAtual])
-
-    
+    useEffect(() => {
+        setIdAtual()
+    }, [editarNota])
 
     return (
 

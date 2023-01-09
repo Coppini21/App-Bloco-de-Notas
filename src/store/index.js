@@ -30,16 +30,20 @@ const createNotes = createSlice({
         },
 
         editarNota(state, action) {
+            let atualizarNota = null
             document.getElementById("areaEdicao").disabled = false;
             let areaEdition = document.getElementById("areaEdicao");
-            const atualizarNota = state.notes[posicaoAtual].nota = action.payload.nota
-
+            
             const posicaoAtual = state.notes.findIndex((nota) => nota.id === action.payload.id);
+
+            if (atualizarNota){
+                state.notes[posicaoAtual].nota = action.payload.nota
+            } 
 
             if (posicaoAtual !== -1) {
                 const pos = action.payload.id
                 console.log(posicaoAtual)
-                const atualizarNota = state.notes[posicaoAtual].nota = action.payload.nota
+                atualizarNota = state.notes[posicaoAtual].nota = action.payload.nota
                 areaEdition.innerText = atualizarNota
 
                 salvarEdicao(pos)
