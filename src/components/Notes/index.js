@@ -19,7 +19,7 @@ export default function Notes() {
 
     return (
 
-        <DivNotasSalvas className="totalNota">
+        <DivNotasSalvas className="totalNota" id="totalNota">
 
 
             {notes.length > 0 ? (

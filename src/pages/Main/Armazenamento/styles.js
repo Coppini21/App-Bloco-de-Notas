@@ -31,7 +31,8 @@ export const Container = styled.section`
             border-radius: 5px;
             font-weight: bold;
             transition: all 0.3s;
-
+            z-index: 1;
+            
             &:hover{
                 transform: scale(1.1);
             }

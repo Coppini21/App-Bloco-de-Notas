@@ -6,8 +6,10 @@ export const DivNotasSalvas = styled.div`
     flex-direction: column;
     align-items: center;
     gap: 20px;
-
+    z-index: 1;
+  
     .nota{
+        max-width: 90%;
         width: 500px;
         height: 100px;
         display: flex;
@@ -18,7 +20,7 @@ export const DivNotasSalvas = styled.div`
     .descricaoNota{
         width: 380px;
         height: 100px;
-        padding: 10px;
+        padding: 10px 30px 10px 10px;
 
         p{
             color: black;
@@ -27,7 +29,9 @@ export const DivNotasSalvas = styled.div`
             text-overflow: ellipsis;
         }
        
-       
+       @media(max-width: 540px) {
+        width: 330px;
+       }
     }
 
     .divBotoes{

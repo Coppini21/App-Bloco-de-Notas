@@ -1,12 +1,20 @@
 import styled from "styled-components";
 
+export const Overlay = styled.div`
+    display: none;
+    width: 100%;
+    height: calc(100% - 130px);
+    position: absolute;
+    background-color: rgba(180, 169, 171, 0.6);
+    z-index: -1;
+`;
+
 export const VisualStyled = styled.div`
     display: none;
     justify-content: center;
     align-items: center;
-    /* position: relative; */
     width: 100%;
-    height: 110px;
+    height: 100%;
 
     #divTotalNote{
         display: flex;
@@ -17,10 +25,16 @@ export const VisualStyled = styled.div`
         position: fixed;
         width: 100%;
         height: 100%;
+
+        @media(max-width: 500px) {
+            margin-top: -300px;
+            position: absolute;
+        }
     }
 
     #divTotalClose{
         max-width: 800px;
+        min-width: 400px;
         height: 50px;
         width: 90%;
         display: flex;
@@ -34,6 +48,7 @@ export const VisualStyled = styled.div`
 
     #VisualizacaoDescricao{
         max-width: 800px;
+        min-width: 400px;
         width: 90%;
         height: 500px;
         border-radius: 10px;

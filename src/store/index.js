@@ -1,5 +1,4 @@
-import { useEffect } from "react";
-
+import styled from "styled-components";
 
 const { createSlice, configureStore } = require("@reduxjs/toolkit");
 
@@ -77,7 +76,12 @@ const createNotes = createSlice({
             if(posicaoAtual !== -1){
                 let descricao = state.notes[posicaoAtual].nota
                 document.getElementById("VisualizacaoDescricao").innerText = descricao
-                document.getElementById("visualStyled").style.display = "flex"
+                document.getElementById("visualStyled").style.display = "flex" 
+                document.getElementById("overlay").style.display = "block"
+                document.getElementById("overlayMenu").style.display = "block"
+                document.getElementById("totalNota").style.zIndex = -1
+                document.getElementById("btnSalvarEdicao").style.zIndex = -1
+        
             }
         }
     }

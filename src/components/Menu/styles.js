@@ -1,5 +1,13 @@
 import styled from "styled-components";
 
+export const Overlay = styled.div`
+    display: none;
+    width: 100%;
+    height: 130px;
+    position: absolute;
+    background-color: rgba(180, 169, 171, 0.6);
+    z-index: 1;
+`;
 
 export const Container = styled.header`
     @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
@@ -10,8 +18,9 @@ export const Container = styled.header`
     padding: 0 50px;
     height: 130px;
     background: rgb(190, 99, 45 ) ;
+    z-index: 2;
 
-    
+  
     .divMenuLadoEsquerdo{
         display: ${({id}) => id === "notas" ? 'none' : 'flex'};
         flex-direction: column;

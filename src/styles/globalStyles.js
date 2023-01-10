@@ -9,9 +9,15 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
     background: black ;
     color: black;
     -webkit-font-smoothing: antialiased;
+    min-width: 500px;
+    position: relative;
   }
 
   body, input, button {
