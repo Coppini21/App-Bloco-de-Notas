@@ -27,7 +27,7 @@ export const VisualStyled = styled.div`
         height: 100%;
 
         @media(max-width: 500px) {
-            margin-top: -300px;
+            margin-top: -180px;
             position: absolute;
         }
     }
